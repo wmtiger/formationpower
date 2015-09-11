@@ -39,6 +39,7 @@ package com
 		
 		private function onTemplateInited(e:Event):void
 		{
+			Starling.current.removeEventListener("templateInited",onTemplateInited);
 			_firstLoading.progress = 0.1;// 模板加载完毕后，设置为0.1，开始加载ui
 			
 			loadUIAsset();
@@ -50,6 +51,7 @@ package com
 			var am:AssetManager = Assets.instance.assetMgr;
 			GameMgr.assetMgr = am;
 			am.verbose = true;
+			
 			am.enqueue([AssetsUtil.getUIsDirFile()]);
 			am.loadQueue(function(ratio:Number):void{
 				_firstLoading.progress = ratio + 0.1;
