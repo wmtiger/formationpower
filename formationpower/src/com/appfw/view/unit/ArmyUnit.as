@@ -13,7 +13,10 @@ package com.appfw.view.unit
 		
 		public function resetTextureAtlas(tas:TextureAtlas):void
 		{
-			
+			if(_mc)
+			{
+//				_mc = new MovieClip(
+			}
 		}
 
 		public function get mc():MovieClip
